@@ -65,7 +65,7 @@ public class GamePanel extends JPanel implements ActionListener {
                     y[i]=100;
                  }
                    running=true;
-                   timer=new Timer(75,this);
+                   timer=new Timer(150,this);
                    timer.start();
              }
 
@@ -107,10 +107,9 @@ public class GamePanel extends JPanel implements ActionListener {
                 }
              }
              public void gameOver(Graphics g){
-                g.setColor(Color.red);
-                g.setFont(new Font("Ink Free", Font.BOLD,40));
-                FontMetrics metrics = getFontMetrics(g.getFont());
-                g.drawString("Score: "+applesEaten,(SCREEN_WIDTH - metrics.stringWidth("Score: "+applesEaten))/2,g.getFont().getSize());
+                g.setColor(Color.black);
+                g.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+              
                 //Game Over yazısı
                 g.setColor(Color.red);
                 g.setFont(new Font("Ink Free",Font.BOLD,75));
@@ -120,34 +119,48 @@ public class GamePanel extends JPanel implements ActionListener {
 
 
              public void draw(Graphics g){
-               
                 //Elmanın rengini boyutunu ve konumunu belirledik
                 if(running){
+                    g.setColor(new Color(40,40,40));
+                for(int i=0;i<SCREEN_HEIGHT/UNIT_SIZE;i++){
+                    g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HEIGHT);
+                    g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH, i*UNIT_SIZE);
+                }
+            
                  g.setColor(Color.red);
                  g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
 
                  for(int i=0;i<bodyParts;i++){
                    if(i==0){
-                    g.setColor(Color.green); //Yılanın rengini belirledik ve baş kısmını ayırdık
-                    g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+                    g.setColor(new Color(0,150,0)); //Yılanın rengini belirledik ve baş kısmını ayırdık
+                    g.fillRoundRect(x[i]+2, y[i]+2, UNIT_SIZE-4, UNIT_SIZE-4, 10, 10);
+                    g.setColor(Color.white);
+                    g.fillOval(x[i]+6, y[i]+6, 4, 4);
+                    g.fillOval(x[i]+15, y[i]+6, 4, 4);
                    }else{
                     g.setColor(new Color(45,180,0));
-                    g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+                    g.fillRoundRect(x[i]+3, y[i]+3, UNIT_SIZE-6, UNIT_SIZE-6, 8, 8);
                    }
+                g.setColor(Color.red);
+                g.setFont(new Font("Ink Free", Font.BOLD,40));
+                FontMetrics metrics = getFontMetrics(g.getFont());
+                g.drawString("Score: "+applesEaten,(SCREEN_WIDTH - metrics.stringWidth("Score: "+applesEaten))/2,g.getFont().getSize());
                  }
+                 g.setColor(new Color(0,0,0,150));
+                 g.fillRect(10,10,100,40);
+                 g.setColor(Color.white);
+                 g.drawRect(10,10,100,40);
+                 g.setFont(new Font("Ink Free", Font.BOLD,20));
+                 g.drawString("Score: "+applesEaten,20,37);
+
+
+
                 }else{
                     gameOver(g);
                 }
 
-                 
-
-
              }
              
-
-
-
-
 
 @Override
 public void actionPerformed(ActionEvent e) {
