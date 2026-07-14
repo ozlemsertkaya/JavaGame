@@ -1,23 +1,23 @@
-# 🐍 Java Snake Game
+# Java Snake Game 🐍🎮
 
-Bu proje, Java Swing ve AWT kütüphaneleri kullanılarak geliştirilmiş klasik bir Yılan Oyunu (Snake Game) uygulamasıdır. Yazılım mühendisliği prensiplerine uygun olarak nesne yönelimli bir yapıda kurgulanmıştır.
+A classic desktop Snake Game developed in Java using the Swing library. This project was built to demonstrate clean code principles, UI grid rendering, and core Object-Oriented Programming (OOP) concepts.
 
-## 🚀 Özellikler
-* **Modern Görsel Tasarım:** İnce ve yuvarlatılmış hatlara sahip estetik yılan tasarımı.
-* **Dinamik UI:** Sol üst köşede, yarı şeffaf kutucuk içerisinde anlık skor takibi.
-* **Akıcı Oynanış:** Dengelenmiş hareket hızı ve hassas klavye kontrolleri.
-* **Hata Ayıklama Modu:** Oyun sırasında aktif olan, oyun bitince temizlenen ızgara (grid) sistemi.
+## 🚀 Features
+- **Smooth Gameplay & Controls:** Standard arrow-key controls for steering the snake with precise direction handling.
+- **Dynamic Speed & Grid System:** Implemented a real-time grid coordinate system with customizable speed parameters that scale as the game progresses.
+- **Object-Oriented Architecture:** Strongly adhered to OOP principles, separating the game logic, UI rendering, and event handling into modular classes.
+- **High Score Tracking:** Keeps track of the player's score dynamically on the screen.
 
-## 🛠️ Kullanılan Teknolojiler
-* **Dil:** Java 
-* **Kütüphaneler:** Swing, AWT
-* **Editör:** VS Code
+## 🛠️ Tech Stack
+- **Language:** Java (JDK 8 or higher)
+- **GUI Framework:** Java Swing & AWT
 
-## 🎮 Nasıl Çalıştırılır?
-1. Repoyu bilgisayarınıza indirin.
-2. Terminal üzerinden projenin bulunduğu klasöre gidin.
-3. Derlemek için: `javac Game.java`
-4. Çalıştırmak için: `java Game`
+## 🎮 How to Play
+- Use the **Arrow Keys** (Up, Down, Left, Right) to navigate the snake.
+- Eat the red food apples to grow and increase your score.
+- Avoid hitting the screen boundaries or colliding with the snake's own body.
 
-## 👥 Katkıda Bulunanlar
-* **Özlem Sertkaya** - *Geliştirici*
+## ⚙️ Installation & Running
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/ozlemsertkaya/Java-Snake-Game.git](https://github.com/ozlemsertkaya/Java-Snake-Game.git)
